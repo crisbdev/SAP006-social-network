@@ -1,5 +1,7 @@
 // import { auth } from '../../lib/authentication.js';
-import { onNavigate } from '../../navigate.js';
+import {
+  onNavigate,
+} from '../../navigate.js';
 
 export default () => {
   const feed = document.createElement('div');
@@ -14,7 +16,7 @@ export default () => {
       <li><a id="home">Home</a></li>
       <li><a href="#">Profile</a></li>
       <li><a  id="logout" href="#">Logout</a></li>
-        <!-- <li><button id="logout">Logout</button></li> -->
+        <!-- <li><button class="btn" id="logout">Logout</button></li> -->
     </ul>
 </div>
   <section class="profile">
@@ -40,13 +42,13 @@ export default () => {
       <li class="social-media-list-item">
         <a href="" class="social-media-list-item-link"><i></i></a>
       </li>
-            <li class="social-media-list-item">
+      <li class="social-media-list-item">
         <a href="" class="social-media-list-item-link"><i></i></a>
       </li>
-            <li class="social-media-list-item">
+      <li class="social-media-list-item">
         <a href="" class="social-media-list-item-link"><i></i></a>
       </li>
-                  <li class="social-media-list-item">
+      <li class="social-media-list-item">
         <a href="" class="social-media-list-item-link"><i></i></a>
       </li>
     </ul>
@@ -65,13 +67,58 @@ export default () => {
   const burgerMenu = feed.querySelector('#burger-menu');
   const overlay = feed.querySelector('#menu');
   burgerMenu.addEventListener('click', function () {
-    this.classList.toggle("close");
-    overlay.classList.toggle("overlay");
+    this.classList.toggle('close');
+    overlay.classList.toggle('overlay');
+
+    // like
+
+    const likeCounter = new Promise((resolve, reject) => resolve(4));
+    const postContainer = feed.querySelector('#posts-container');
   });
 
   return feed;
-
 };
 
+export const postPublisher = () => {
+  const post = postContainer.createElement('div');
+  post.innerHTML = `
+  "<div class="post" id="">
+  <p class="post-user-name justify-center">User</p>
+  <img class="post-user-img justify-center"src="" alt="user image">
+  <textarea class="post-text justify-center"name="" id="" cols="30" rows="10" placeholder="Seu post aqui"></textarea>
+  <span id="">4</span>
+  <button class="post-btn-publish" data-func="post">post</button>
+  <button class="post-btn-like" data-func="like">like</button>
+  <button class="post-btn-del" data-func="delete">delete</button>
+</div>
+  `;
+  let liked = false;
 
+  post.addEventListener('click', (event) => {
+    const dataSetTarget = event.target.dataset.func;
+    if (dataSetTarget === 'like') {
+      const addLike = () => {
+        const targetSpan = event.target.previousElementSibling;
+        const likeValue = Number(targetSpan.innerText);
+        targetSpan.innerText = likeValue + 1;
+        liked = true;
+      };
 
+      const removeLike = () => {
+        const targetSpan = event.target.previousElementSibling;
+        const likeValue = Number(targetSpan.innerText);
+        targetSpan.innerText = likeValue - 1;
+        liked = false;
+      };
+
+      if (liked) {
+        removeLike();
+      } else {
+        addLike();
+      }
+    }
+    if (dataSetTarget === 'delete') {
+
+    }
+  });
+};
