@@ -165,7 +165,6 @@ export default () => {
     });
   };
   loadPosts();
-
   //CRIAR POST
   containerPost.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -174,7 +173,5 @@ export default () => {
       loadPosts();
     });
   });
-
-
   return main.appendChild(feed);
 };
