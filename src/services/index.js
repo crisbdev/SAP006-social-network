@@ -1,7 +1,8 @@
+const db = firebase.firestore();
 // COLEÇÃO DE POSTS
-export const collectionPosts = () => firebase.firestore().collection('posts');
+const collectionPosts = () => db.collection('posts');
 // CRIAÇÃO DE POSTS
-export const criarPost = (text) => {
+const criarPost = (text) => {
   // USUÁRIO
   const usuario = firebase.auth().currentUser;
 
@@ -15,21 +16,42 @@ export const criarPost = (text) => {
 
   return collectionPosts().add(post);
 };
-export const authState = localStorage.getItem('user');
+const authState = localStorage.getItem('user');
+// like post
+const likePost = (idUser, idPost) => db
+  .collection('posts')
+  .doc(idPost)
+  .get()
+  .then((post) => {
+    let like = post.data().like;
+    if (like.includes(idUser)) {
+      like = like.filter((id) => id !== idUser);
+    } else {
+      like.push(idUser);
+    }
+    return db
+      .collection('posts')
+      .doc(idPost)
+      .update({ like })
+      .then(() => like);
+  })
+  .catch('error');
 // delete posts
-export const delPost = (idPost) => firebase.firestore().collection('posts').doc(idPost).delete();
+const delPost = (idPost) => db
+  .collection('posts')
+  .doc(idPost)
+  .delete();
 // edit posts
-//     .add(postagem)
-//     .then((docRef) => {
-//         console.log("Document written with ID: ", docRef.id);
-//         msg.value = '';
-//     })
+const updatePost = (idPost, text) => db
+  .collection('posts')
+  .doc(idPost)
+  .update({ mensagem: text });
+// get likes
+const getLikes = (idPost) => db
+  .collection('posts')
+  .doc(idPost)
+  .get();
 
-//     //tratar erros do firebase
-//     .catch((error) => {
-//         console.error("Error adding document: ", error);
-//     });
-
-// addPostMsg.innerHTML = addPost;
-
-//   });
+export {
+  collectionPosts, criarPost, authState, likePost, delPost, updatePost, getLikes,
+};

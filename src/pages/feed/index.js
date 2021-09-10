@@ -5,9 +5,13 @@ import {
 import {
   collectionPosts,
   criarPost,
+  likePost,
+  dislikePost,
+  getLikes,
   delPost,
+  updatePost,
   authState,
-// eslint-disable-next-line import/named
+  // eslint-disable-next-line import/named
 } from '../../services/index.js';
 
 export default () => {
@@ -40,7 +44,6 @@ export default () => {
      <img src="./img/ellas-dev-logo.png">
     </figure> -->
 
-
   <article class="container-area">
     <div class="post-container">
       <div class="infoUser">
@@ -56,7 +59,6 @@ export default () => {
     </div>
     <ul id="addPost"></ul>
   </article>
-
 
       <footer>
         <ul class="social-media-list">
@@ -90,7 +92,7 @@ export default () => {
 
   const burgerMenu = feed.querySelector('#burger-menu');
   const overlay = feed.querySelector('#menu');
-  burgerMenu.addEventListener('click', function a() {
+  burgerMenu.addEventListener('click', function () {
     this.classList.toggle('close');
     overlay.classList.toggle('overlay');
   });
@@ -99,38 +101,37 @@ export default () => {
   const postList = feed.querySelector('#addPost');
   const mensagem = feed.querySelector('#mensagem');
   const containerPost = feed.querySelector('#post-container');
-
   // ADD POST NA LISTA
   const addPost = (doc) => {
     // console.log(doc.data(), doc.data().user_id);
     const element = document.createElement('li');
     const postTemplate = `
     
-<div data-post="${doc.id}" class="post-publicado">
-
- <textarea data-textarea="${doc.id}" class="post-publicado" id="post-publicado" disabled>${doc.data().mensagem}</textarea>
- <button data-like="${doc.id}" class="like" id="btn-publicar">like</button>
- <button data-del="${doc.id}" class="del" id="btn-del">delete</button>
- <button data-edit="${doc.id}" class="edit" id="btn-edit">edit</button>
-    <section data-edit="${doc.id} class="edit-btns">
-    <button data-edit-save="${doc.id}" class="edit-btns-save">salvar</button>
-    <button data-edit-cancel="${doc.id}" class="edit-btns-cancel">cancelar</button>    
-    </section>
- </div>
-`;
-
+    <div data-post="${doc.id}" class="post-publicado">
+      <textarea data-textarea="${doc.id}" class="post-publicado" id="post-publicado" disabled>${doc.data().mensagem}</textarea>
+      <button data-like="${doc.id}" class="like" id="btn-publicar">like</button>
+      <p data-counter="${doc.id}">${doc.data().like.length}</p>
+      <button data-del="${doc.id}" class="del" id="btn-del">delete</button>
+      <button data-edit="${doc.id}" class="edit" id="btn-edit">edit</button>
+      <section data-section="${doc.id}" class="edit-btns">
+        <button data-update="${doc.id}" class="edit-btns">salvar</button>
+        <button data-cancel="${doc.id}" class="edit-btns">cancelar</button>    
+      </section>
+    </div>
+    `;
     element.innerHTML += postTemplate;
     postList.append(element);
 
-    // deu ruim aqui com o display none!
     const delBtn = element.querySelector('[data-del]');
-    const editBtn = element.querySelector('[data-edit]');
+    const editBtn = element.querySelector(`[data-edit="${doc.id}"]`);
+    // const updateBtn = element.querySelector(`[data-update="${doc.id}"]`);
     if (authState !== doc.data().user_id) {
       delBtn.style.display = 'none';
       editBtn.style.display = 'none';
     }
 
-    const sectionBtn = element.querySelector('[data-edit]');
+    const sectionBtn = element
+      .querySelector(`[data-section="${doc.id}"]`);
     sectionBtn.style.display = 'none';
     const dataPost = element.querySelector('[data-post]');
 
@@ -138,34 +139,60 @@ export default () => {
       const {
         target,
       } = event;
+      const postArea = element
+        .querySelector(`[data-textarea="${doc.id}"]`);
+      const getValue = postArea.value;
+
+      if (target.dataset.like) {
+        const likeCount = element.querySelector(`data-counter="${doc.id}"`);
+        const likeIcon = element.querySelector(`.btn-like i[data-like="${doc.id}"]`);
+        const likeNum = Number(likeCount.innerText);
+      
+        .querySelector(`[data-post="${target.dataset.like}"]`);
+
+        likePost(authState, target.dataset.like)
+          .then(() => updatePost())
+          .catch('error');
+      }
 
       if (target.dataset.del) {
-        const postSelect = element.querySelector(`[data-post="${target.dataset.del}"]`);
+        const postSelect = element
+          .querySelector(`[data-post="${target.dataset.del}"]`);
         delPost(target.dataset.del);
         postSelect.remove();
       }
 
       if (target.dataset.edit) {
         sectionBtn.style.display = 'block';
-        element.querySelector('[data-textarea]');
+        postArea.removeAttribute('disabled', '');
+      }
+
+      if (target.dataset.update) {
+        updatePost(doc.id, getValue);
+        postArea.setAttribute('disabled', '');
+        // console.log(updatePost(), updateBtn);
+      }
+
+      if (target.dataset.cancel) {
+        postArea.setAttribute('disabled', '');
       }
     });
     return element;
   };
   // LISTAS DE POSTS
-
-  // BUSCAR NO BANCO DE DADOS OS POSTS - // get() - ler todos os posts.
+    // BUSCAR NO BANCO DE DADOS OS POSTS - // get() - ler todos os posts.
   const loadPosts = () => {
-    collectionPosts().orderBy('data', 'desc').get().then((collection) => {
-      postList.innerHTML = '';
-      collection.forEach((doc) => {
-        addPost(doc);
+    collectionPosts()
+      .orderBy('data', 'desc')
+      .get()
+      .then((collection) => {
+        postList.innerHTML = '';
+        collection.forEach((doc) => {
+          addPost(doc);
+        });
       });
-    });
   };
-
   loadPosts();
-
   // CRIAR POST
   containerPost.addEventListener('submit', (e) => {
     e.preventDefault();
