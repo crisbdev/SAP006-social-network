@@ -11,7 +11,6 @@ export default () => {
       <div id="burger-menu">
       <span></span>
     </div>
-
     <div id="menu">
         <ul>
           <li><a id="home">Home</a></li>
@@ -31,8 +30,6 @@ export default () => {
     <!-- <figure class="logo">
      <img src="./img/ellas-dev-logo.png">
     </figure> -->
-
-
   <article class="container-area">
     <div class="post-container">
       <div class="infoUser">
@@ -48,8 +45,6 @@ export default () => {
     </div>
     <ul id="addPost"></ul>
   </article>
-
-
       <footer>
         <ul class="social-media-list">
           <li class="social-media-list-item">
@@ -83,17 +78,12 @@ export default () => {
     this.classList.toggle("close");
     overlay.classList.toggle("overlay");
   });
-
-
-
   const listaDePost = feed.querySelector('#addPost');
   const mensagem = feed.querySelector('#mensagem');
   const containerPost = feed.querySelector('#post-container');
 
   //ADD POST NA LISTA
   const addPost = (doc) => {
-
-
     const postTemplate = `
     
 <div class="post-publicado">
