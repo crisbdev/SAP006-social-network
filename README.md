@@ -1,41 +1,54 @@
-# Criando uma Rede Social
+# {Ellas Dev}
 
 ## Índice
 
-- [1. Prefácio](#1-prefácio)
-- [2. Resumo do projeto](#2-resumo-do-projeto)
-- [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
-- [4. Considerações gerais](#4-considerações-gerais)
-- [5. Critérios de aceitação mínimos do projeto](#5-criterios-de-aceitação-mínimos-do-projeto)
-- [6. Hacker edition](#6-hacker-edition)
-- [7. Entrega](#7-entrega)
-- [8. Guias, dicas e leituras complementares](#8-guias-dicas-e-leituras-complementares)
+- [1. Sobre](#1-Sobre)
+- [2. Histórias de Usuários](#2-Histórias-de-Usuários)
+- [3. Layout](#3-Layout)
+- [4. Produto Final](#4-Produto-Final)
+- [5. Planejamento](#5-Planejamento)
+- [6. Metodologias e Tecnologias](#6-Metodologias-e-Tecnologias)
+- [7. Autoras](#7-autoras)
 
----
 
-## 1. Prefácio
+Proposta.
+<p align='center'>
+<img src='src/img/ellas-dev-logo.png' widht='40%'> 
+</p>
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. As redes sociais
-invadiram nossas vidas. Nós as amamos ou odiamos, e muitas pessoas não conseguem
-viver sem elas.
 
-Há redes sociais de todo tipo para todos os tipos de interesse. Por exemplo: em
-uma rodada de financiamento com investidores, foi apresentada uma rede social
-para químicos onde os usuários podem publicar artigos a respeito de suas
-pesquisas, comentar os artigos de seus colegas e filtrar artigos de acordo com
-determinadas tags ou popularidade, mais recente ou mais comentado.
+## 1. Sobre
 
-## 2. Resumo do projeto
+Ellas Dev é uma rede social pensada para alunas e ex alunas da [Laboratoria Brasil](https://www.laboratoria.la/br), com a intenção de facilitar trocas de experiências, network e divisão de conhecimento. A rede social permite publicação de posts inspirada no Twitter, possibilitando dar like em posts favoritos.
 
-Neste projeto você construirá uma Rede Social sobre o que você e sua equipe
-decidirem. Pode ser, por exemplo, sobre alimentação saudável, feminismo,
-educação, saúde, energias renováveis, amantes das
-[Empanadas](https://pt.wikipedia.org/wiki/Empanada), de
-[Tacos](<https://pt.wikipedia.org/wiki/Taco_(culin%C3%A1ria)>), de
-[Feijoada](https://pt.wikipedia.org/wiki/Feijoada), ou do que seja.
 
-Sua Rede Social terá que permitir à qualquer usuário criar uma conta de acesso,
-logar-se com ela, criar, editar, deletar e dar _likes_ em publicações.
+
+## 2. Histórias de Usuários
+Para o desenvolvimento de produtos voltado para o usuário, utilizamos pesquisas de UX designer, com base no tema as personas são pré estabelecidas, então buscamos identificar o melhor conceito de cores e interface.
+
+![Pesquisa do usuário um](src/img/HistoriaDeUsuario1.JPG)
+
+
+Definição de cores:
+
+![Pesquisa do usuário um](src/img/historiaDeUsuario2.JPG)
+
+![Quadro_Duas_Fridas](https://trello-attachments.s3.amazonaws.com/60b51bd771fc297c60145c0b/6102e082f19dbe11b854949f/418f311760c2fc9297f87a5b967fd51a/DuasFridas1.jpg)
+
+
+## 3. Layout
+
+-print protótipo
+
+## 4. Produto Final
+
+-gif aplicação final
+
+## 5. Planejamento
+
+O fluxograma descreve um processo, sistema ou algoritmo de computador. São amplamente utilizados para documentar, estudar, planejar, melhorar e comunicar processos complexos por meio de diagramas claros e fáceis de entender. Para definirmos o seguimento do trabalho em dupla, utilizamos para definir o fluxo das pastas contendo cada itens da aplicação final.
+
+![Mapa Mental no Xmind](https://incongruous-ironclad-7f2.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd3b8f87b-29f9-4aa4-9b74-9a3d98649222%2FSocial_network-Map_1.png?table=block&id=9a980800-632b-46d6-a345-a04db1f1cd16&spaceId=a4c8eb5b-0ea6-40bd-91c7-d2ed95751a28&width=1670&userId=&cache=v2)
 
 ## 3. Objetivos de aprendizagem
 
@@ -47,36 +60,36 @@ qual seja possível **ler e escrever dados.**
 
 ### HTML e CSS
 
-- [ ] [HTML
+- [X] [HTML
       semântico](https://developer.mozilla.org/pt-BR/docs/Glossario/Semantica)
-- [ ] [CSS `flexbox`](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [X] [CSS `flexbox`](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ### DOM e Web APIs
 
-- [ ] [Manipulação do
+- [X] [Manipulação do
       DOM](https://developer.mozilla.org/pt-BR/docs/DOM/Referencia_do_DOM/Introdu%C3%A7%C3%A3o)
-- [ ] [History
+- [X] [History
       API](https://developer.mozilla.org/pt-BR/docs/Web/API/History_API)
-- [ ]
+- [X]
   [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 ### Javascript
 
-- [ ] [Uso de
+- [X] [Uso de
       callbacks](https://developer.mozilla.org/pt-BR/docs/Glossario/Callback_function)
-- [ ] [Consumo de
+- [X] [Consumo de
       Promises](https://scotch.io/tutorials/javascript-promises-for-dummies#toc-consuming-promises)
-- [ ] Uso de ES modules
+- [X] Uso de ES modules
       ([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
       |
       [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
 
 ### Firebase
 
-- [ ] [Firestore](https://firebase.google.com/docs/firestore)
-- [ ] [Firebase Auth](https://firebase.google.com/docs/auth/web/start)
-- [ ] [Firebase security rules](https://firebase.google.com/docs/rules)
-- [ ] [Uso de
+- [X] [Firestore](https://firebase.google.com/docs/firestore)
+- [X] [Firebase Auth](https://firebase.google.com/docs/auth/web/start)
+- [X] [Firebase security rules](https://firebase.google.com/docs/rules)
+- [X]  [Uso de
       onSnapshot](https://firebase.google.com/docs/firestore/query-data/listen) |
       [onAuthStateChanged](https://firebase.google.com/docs/auth/web/start#set_an_authentication_state_observer_and_get_user_data)
 
@@ -88,14 +101,14 @@ qual seja possível **ler e escrever dados.**
 
 ### Git e Github
 
-- [ ] [Colaboração pelo Github](https://docs.github.com/pt/github/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository)
-- [ ] [Organização pelo Github](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards)
+- [X] [Colaboração pelo Github](https://docs.github.com/pt/github/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository)
+- [X] [Organização pelo Github](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards)
 
 ### Boas práticas de programação
 
-- [ ] Modularização
-- [ ] Nomenclatura / Semântica
-- [ ] Linting
+- [X] Modularização
+- [X] Nomenclatura / Semântica
+- [X] Linting
 
 ---
 
