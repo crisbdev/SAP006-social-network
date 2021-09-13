@@ -18,7 +18,6 @@ export default () => {
       <div id="burger-menu">
       <span></span>
     </div>
-
     <div id="menu">
         <ul>
           <li><a id="home">Home</a></li>
@@ -84,6 +83,7 @@ export default () => {
   const mensagem = feed.querySelector('#mensagem');
   const containerPost = feed.querySelector('#post-container');
   const addPost = (doc) => {
+    
     const userId = doc.data().user_id;
     const element = document.createElement('li');
     const postTemplate = `

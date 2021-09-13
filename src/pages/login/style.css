@@ -14,10 +14,10 @@
 
 h3 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: -26px;
     color: #272262;
     font-size: larger;
-    ;
+    
 }
 
 .box-input input {
@@ -116,3 +116,17 @@ a {
 a:hover {
     color: #272262;
 }
+
+ @media (min-width:320px) and (max-width: 430px) {
+     .container {
+         width: 90%;
+         margin: 40px auto;
+         margin-top: 13%;
+     }
+
+     .img {
+         width: 100%;
+     }
+     
+ }
+
