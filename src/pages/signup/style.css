@@ -26,7 +26,7 @@ body {
     box-shadow: 3px 3px 1px 0px #00000060;
 }
 
-h1 {
+.Cadastre-se {
     text-align: center;
     margin-bottom: 20px;
     color: #272262;
@@ -124,4 +124,20 @@ a {
 
 a:hover {
     color: #272262;
+}
+
+@media (min-width:320px) and (max-width: 430px) {
+    .container {
+        width: 90%;
+        margin-top: 20%;
+    }
+
+    .img-sinup {
+        width: 99%
+    }
+
+    .Cadastre-se{
+        font-size: 1.3rem;
+    }
+  
 }

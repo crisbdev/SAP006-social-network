@@ -8,9 +8,9 @@ export default () => {
     <section id="modal-signup" class="container">
     <div class="box">
       <figure class="logo">
-        <img src="./img/ellas-dev-logo.png">
+        <img class="img-sinup"src="./img/ellas-dev-logo.png">
       </figure>
-      <h1 class="">Cadastre-se</h1>
+      <h1 class="Cadastre-se">Cadastre-se</h1>
       <form id="form">
         <section class="box-input">
           <input type="email" id="signup-email" name="email" placeholder="Email">

@@ -8,7 +8,7 @@ export default () => {
 <section id="container-login" class="container">
   <section class="box">
     <figure class="logo">
-      <img src="./img/ellas-dev-logo.png">
+      <img class="img" src="./img/ellas-dev-logo.png">
     </figure>
     <h3 class="">Login</h3>
     <p id="errormsg"></p>
