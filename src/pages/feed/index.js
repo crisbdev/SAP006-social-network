@@ -35,7 +35,7 @@ export default () => {
         <strong> username </strong>
       </div>
         <form clas="form-area" id="post-container">
-        <textarea type="text" class="post-area" placeholder=" Vamos mudar o mundo?" name="mensagem"
+        <textarea type="text" class="post-area" placeholder=" O que você quer contar, laboratórian?" name="mensagem"
           id="mensagem"></textarea>
         <button type="submit" class="post-btn" id="btn-postar">postar</button>
       </form>
@@ -91,18 +91,18 @@ export default () => {
     <div data-post="${doc.id}" class="post-publicado">
     <textarea data-textarea="${doc.id}" class="post-publicado" id="post-publicado" disabled>${doc.data().mensagem}</textarea>
     <nav class="post-navbar">
-      <button data-del="${doc.id}" class="post-navbar-btn" id="btn-del"> del
-        <img src="img/trash-delete.png" data-delete alt="trash icon" width="27px"/>
+      <button class="post-navbar-btn" id="btn-del"> 
+        <img data-del="${doc.id}"  src="img/trash-delete.png" data-delete alt="trash icon" width="27px"/>
       </button>
-      <button class="post-navbar-btn" id="btn-edit"> edit
+      <button class="post-navbar-btn" id="btn-edit"> 
         <img data-edit="${doc.id}" src="img/pencil-icon.png" data-edit alt="edit-icon" class="edit-icon" width="27px">
       </button>
         <section data-section="${doc.id}" class="edit-section">
           <button data-update="${doc.id}" class="edit-section-btns">salvar</button>
           <button data-cancel="${doc.id}" class="edit-section-btns">cancelar</button>    
         </section>
-      <button data-like="${doc.id}" class="post-navbar-btn" id="btn-publicar"> like
-        <img src="img/heart.png" data-delete alt="trash icon" width="27px"/>
+      <button class="post-navbar-btn" id="btn-publicar"> 
+        <img data-like="${doc.id}" src="img/heart.png" data-delete alt="trash icon" width="27px"/>
       </button>
       <p data-counter="${doc.id}">${doc.data().like.length}</p>
     </nav>
@@ -159,13 +159,6 @@ export default () => {
           });
       }
     });
-    const likesP = doc.data().like;
-    const likeBtn = element.querySelector(`[data-like="${doc.id}"]`);
-    if (!likesP.includes(userId)) {
-      likeBtn.style.background = 'red';
-    } else {
-      likeBtn.style.background = 'yellow';
-    }
     return element;
   };
 
