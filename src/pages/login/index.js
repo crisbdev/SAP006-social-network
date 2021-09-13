@@ -1,4 +1,5 @@
 import { loginWithEmailAndPassword, signInWithGoogle } from '../../lib/authentication.js';
+import { keepUserLogged } from '../../services/index.js';
 
 export default () => {
   const login = document.createElement('div');
@@ -61,6 +62,7 @@ export default () => {
         }
         return error;
       });
+    keepUserLogged();
   });
 
   const googleButton = login.querySelector('#google-btn');
@@ -84,6 +86,7 @@ export default () => {
         }
         return error;
       });
+    keepUserLogged();
   });
 
   login.querySelector('.fa-eye')
