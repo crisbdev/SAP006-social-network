@@ -16,27 +16,31 @@ const criarPost = (text) => {
 
   return collectionPosts().add(post);
 };
-const authState = localStorage.getItem('user');
-// like post
+
 const likePost = (idUser, idPost) => db
   .collection('posts')
   .doc(idPost)
   .get()
   .then((post) => {
-    let like = post.data().like;
+    const like = post.data().like;
+    let updateLikes = [];
     if (like.includes(idUser)) {
-      like = like.filter((id) => id !== idUser);
+      const myLike = like.slice(1, like.indexOf(idUser));
+      updateLikes = myLike.length;
+      db
+        .collection('posts')
+        .doc(idPost)
+        .update({ like: firebase.firestore.FieldValue.arrayRemove(idUser) });
     } else {
       like.push(idUser);
+      updateLikes = like.length;
+      db
+        .collection('posts')
+        .doc(idPost)
+        .update({ like: firebase.firestore.FieldValue.arrayUnion(idUser) });
     }
-    return db
-      .collection('posts')
-      .doc(idPost)
-      .update({ like })
-      .then(() => like);
-  })
-  .catch('error');
-// delete posts
+    return updateLikes;
+  });
 const delPost = (idPost) => db
   .collection('posts')
   .doc(idPost)
@@ -52,6 +56,8 @@ const getLikes = (idPost) => db
   .doc(idPost)
   .get();
 
+const keepUserLogged = () => firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+
 export {
-  collectionPosts, criarPost, authState, likePost, delPost, updatePost, getLikes,
+  collectionPosts, criarPost, likePost, delPost, updatePost, getLikes, keepUserLogged,
 };

@@ -229,7 +229,19 @@
      resize: none;
 }
 
+.edit-section-buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: flex-end;
+}
 
+.post-navbar-btn {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: transparent;
+  }
 /* .logo{
     justify-content: center;
     align-items: center;

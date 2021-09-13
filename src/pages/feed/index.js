@@ -6,11 +6,9 @@ import {
   collectionPosts,
   criarPost,
   likePost,
-  dislikePost,
-  getLikes,
+  // dislikePost,
   delPost,
   updatePost,
-  authState,
   // eslint-disable-next-line import/named
 } from '../../services/index.js';
 
@@ -52,7 +50,7 @@ export default () => {
       </div>
       <!--<h3>O que você quer publicar?</h3>-->
       <form clas="form-area" id="post-container">
-        <textarea type="text" class="post-area" placeholder="Vamos mudar o mundo?" name="mensagem"
+        <textarea type="text" class="post-area" placeholder=" Vamos mudar o mundo?" name="mensagem"
           id="mensagem"></textarea>
         <button type="submit" class="post-btn" id="btn-postar">postar</button>
       </form>
@@ -92,7 +90,7 @@ export default () => {
 
   const burgerMenu = feed.querySelector('#burger-menu');
   const overlay = feed.querySelector('#menu');
-  burgerMenu.addEventListener('click', function () {
+  burgerMenu.addEventListener('click', function burg() {
     this.classList.toggle('close');
     overlay.classList.toggle('overlay');
   });
@@ -103,37 +101,43 @@ export default () => {
   const containerPost = feed.querySelector('#post-container');
   // ADD POST NA LISTA
   const addPost = (doc) => {
-    // console.log(doc.data(), doc.data().user_id);
+    const userId = doc.data().user_id;
     const element = document.createElement('li');
     const postTemplate = `
-    
     <div data-post="${doc.id}" class="post-publicado">
-      <textarea data-textarea="${doc.id}" class="post-publicado" id="post-publicado" disabled>${doc.data().mensagem}</textarea>
-      <button data-like="${doc.id}" class="like" id="btn-publicar">like</button>
+    <textarea data-textarea="${doc.id}" class="post-publicado" id="post-publicado" disabled>${doc.data().mensagem}</textarea>
+    <nav class="post-navbar">
+      <button data-del="${doc.id}" class="post-navbar-btn" id="btn-del"> del
+        <img src="img/trash-delete.png" data-delete alt="trash icon" width="27px"/>
+      </button>
+      <button class="post-navbar-btn" id="btn-edit"> edit
+        <img data-edit="${doc.id}" src="img/pencil-icon.png" data-edit alt="edit-icon" class="edit-icon" width="27px">
+      </button>
+        <section data-section="${doc.id}" class="edit-section">
+          <button data-update="${doc.id}" class="edit-section-btns">salvar</button>
+          <button data-cancel="${doc.id}" class="edit-section-btns">cancelar</button>    
+        </section>
+      <button data-like="${doc.id}" class="post-navbar-btn" id="btn-publicar"> like
+        <img src="img/heart.png" data-delete alt="trash icon" width="27px"/>
+      </button>
       <p data-counter="${doc.id}">${doc.data().like.length}</p>
-      <button data-del="${doc.id}" class="del" id="btn-del">delete</button>
-      <button data-edit="${doc.id}" class="edit" id="btn-edit">edit</button>
-      <section data-section="${doc.id}" class="edit-btns">
-        <button data-update="${doc.id}" class="edit-btns">salvar</button>
-        <button data-cancel="${doc.id}" class="edit-btns">cancelar</button>    
-      </section>
-    </div>
+    </nav>
+  </div>
     `;
     element.innerHTML += postTemplate;
     postList.append(element);
 
-    const delBtn = element.querySelector('[data-del]');
+    const dataPost = element.querySelector(`[data-post="${doc.id}"]`);
+    const delBtn = element.querySelector(`[data-del="${doc.id}"]`);
     const editBtn = element.querySelector(`[data-edit="${doc.id}"]`);
-    // const updateBtn = element.querySelector(`[data-update="${doc.id}"]`);
-    if (authState !== doc.data().user_id) {
+    const sectionBtn = element.querySelector(`[data-section="${doc.id}"]`);
+
+    if (userId !== doc.data().user_id) {
       delBtn.style.display = 'none';
       editBtn.style.display = 'none';
     }
 
-    const sectionBtn = element
-      .querySelector(`[data-section="${doc.id}"]`);
     sectionBtn.style.display = 'none';
-    const dataPost = element.querySelector('[data-post]');
 
     dataPost.addEventListener('click', (event) => {
       const {
@@ -143,21 +147,8 @@ export default () => {
         .querySelector(`[data-textarea="${doc.id}"]`);
       const getValue = postArea.value;
 
-      if (target.dataset.like) {
-        const likeCount = element.querySelector(`data-counter="${doc.id}"`);
-        const likeIcon = element.querySelector(`.btn-like i[data-like="${doc.id}"]`);
-        const likeNum = Number(likeCount.innerText);
-      
-        .querySelector(`[data-post="${target.dataset.like}"]`);
-
-        likePost(authState, target.dataset.like)
-          .then(() => updatePost())
-          .catch('error');
-      }
-
       if (target.dataset.del) {
-        const postSelect = element
-          .querySelector(`[data-post="${target.dataset.del}"]`);
+        const postSelect = element.querySelector(`[data-post="${target.dataset.del}"]`);
         delPost(target.dataset.del);
         postSelect.remove();
       }
@@ -176,11 +167,37 @@ export default () => {
       if (target.dataset.cancel) {
         postArea.setAttribute('disabled', '');
       }
+      if (target.dataset.like) {
+        likePost(userId, target.dataset.like)
+          .then((like) => {
+            const likeCount = element.querySelector(`[data-counter="${doc.id}"]`);
+            likeCount.innerText = like;
+          });
+      // } else {
+      //   dislikePost(userId, target.dataset.like)
+      //     .then(() => {
+      //       const likeArray = doc.data().like;
+      //       const likeIndex = likeArray.indexOf(userId);
+      //       const likeCount = element.querySelector(`[data-counter="${doc.id}"]`);
+      //       const likeNum = Number(likeCount.innerText);
+      //       likeArray.splice(likeIndex, 1);
+      //       likeCount.innerText = likeNum - 1;
+      //     })
+      //     .catch('error');
+      }
     });
+    const likesP = doc.data().like;
+    const likeBtn = element.querySelector(`[data-like="${doc.id}"]`);
+    if (!likesP.includes(userId)) {
+      likeBtn.style.background = 'red';
+    } else {
+      likeBtn.style.background = 'yellow';
+    }
     return element;
   };
   // LISTAS DE POSTS
-    // BUSCAR NO BANCO DE DADOS OS POSTS - // get() - ler todos os posts.
+  // BUSCAR NO BANCO DE DADOS OS POSTS - // get() - ler todos os posts.
+
   const loadPosts = () => {
     collectionPosts()
       .orderBy('data', 'desc')
