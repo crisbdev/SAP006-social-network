@@ -1,11 +1,9 @@
 const db = firebase.firestore();
-// COLEÇÃO DE POSTS
 const collectionPosts = () => db.collection('posts');
-// CRIAÇÃO DE POSTS
 const criarPost = (text) => {
-  // USUÁRIO
+  
   const usuario = firebase.auth().currentUser;
-
+  
   const post = {
     user_id: usuario.uid,
     mensagem: text.value,
@@ -41,16 +39,17 @@ const likePost = (idUser, idPost) => db
     }
     return updateLikes;
   });
+
 const delPost = (idPost) => db
   .collection('posts')
   .doc(idPost)
   .delete();
-// edit posts
+
 const updatePost = (idPost, text) => db
   .collection('posts')
   .doc(idPost)
   .update({ mensagem: text });
-// get likes
+
 const getLikes = (idPost) => db
   .collection('posts')
   .doc(idPost)

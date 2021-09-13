@@ -2,8 +2,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    /* background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);
-    background: linear-gradient(to right, #2a5298, #1e3c72);  */
 }
 
 #burger-menu {
@@ -104,44 +102,17 @@
     text-decoration: none;
 }
 
-/*fim do menu hamburguer
-.profile {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 20;
-    left: 0;
-    background-color: #000;
-    overflow-x: hidden;
-    padding-top: 20px;
-    border: solid 2px #000;
-    border-radius: 20px;
-    margin: 25px;
-    text-align: center;
-}
-
-*/
-
 .profile img {
     border-radius: 100%;
     max-block-size: 140px;
 
 }
-
-/* .profile h3 {
-    font-style: bold;
-    padding: 20px;
-    background-color: #000;
-} */
-
 .profile textarea {
     font-size: 1rem;
     border: solid 1px #000;
     max-width: inherit;
 }
 
-/* PÁGINA DO FEED */
 .container-area {
     margin-left: 240px;
     padding: 0px 10px;
@@ -156,7 +127,6 @@
     height: 188px;
     display: flex;
     flex-direction: column;
-    /* align-items: center ; */
     margin: 20px 89px;
     padding: 25px;
 
@@ -167,7 +137,6 @@
 
 .post-container .infoUser {
     display: flex;
-    /* justify-content: center;  */
     align-items: center;
 }
 
@@ -216,10 +185,8 @@
     justify-content: center;
     flex-direction: column;
     width: 69%;
-    /* background: #bfe0f3b6; */
     border-radius: 10px;
     padding: 2%;
-    /* margin-top: 45px; */
     margin-left: 8%;
     margin-bottom: 48px;
     box-shadow: 5px 10px 10px rgb(0 0 0 / 32%);
@@ -242,16 +209,24 @@
     cursor: pointer;
     background: transparent;
   }
-/* .logo{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    width: 100%;
-    height: 50px;
-    
-    }
-     */
 
+.post-publicado{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 69%;
+    border-radius: 10px;
+    padding: 2%;
+    margin-left: 8%;
+    margin-bottom: 48px;
+    box-shadow: 5px 10px 10px rgb(0 0 0 / 32%);
+    margin: 8px 34px;
+    margin-top: 49px;
+     outline: none;
+     resize: none;
+}
 
 @media screen and (max-height: 450px) {
     .profile {
@@ -266,9 +241,6 @@
 
 @media screen and (min-height: 320px) {
     .post-container {
-
         margin: 10px 19px;
-
     }
-
 }
