@@ -35,10 +35,12 @@ Para os nossos usuários é importante um espaço voltado para mulheres na tecno
 Escolhemos quatro obras de artistas mulheres para a definição de protótipo e cores.
 
 A Obra escolhida:
+
 ![Quadro_Duas_Fridas](https://trello-attachments.s3.amazonaws.com/60b51bd771fc297c60145c0b/6102e082f19dbe11b854949f/418f311760c2fc9297f87a5b967fd51a/DuasFridas1.jpg)
 
 
 Resultado da peasquisa:
+
 ![Pesquisa do usuário um](src/img/historiaDeUsuario2.JPG)
 
 
