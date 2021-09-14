@@ -46,9 +46,22 @@ Resultado da pesquisa:
 
 ## 3. Layout
 
-<img src="src/img/Protótipo mobile.png" width="40%">
+<img src="src/img/Protótipo mobile.png" width="60%">
 
 ## 4. Produto Final
+
+Tela de login:
+
+<img src="src/img/login.png" width="60%">
+
+Tela de Cadastro:
+
+<img src="src/img/cadastro.png" width="60%">
+
+Tela de feed:
+
+<img src="src/img/feed.png" width="60%">
+
 
 -gif aplicação final
 
@@ -57,7 +70,7 @@ Resultado da pesquisa:
 O fluxograma descreve um processo, sistema ou algoritmo de computador. São amplamente utilizados para documentar, estudar, planejar, melhorar e comunicar processos complexos por meio de diagramas claros e fáceis de entender. Para definirmos o seguimento do trabalho em dupla, utilizamos para definir o fluxo das pastas contendo cada itens da aplicação final.
 
 
-<img src="src/img/fluxograma.png" width="40%">
+<img src="src/img/fluxograma.png" width="60%">
 
 
 
