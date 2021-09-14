@@ -56,6 +56,10 @@ Resultado da pesquisa:
 
 O fluxograma descreve um processo, sistema ou algoritmo de computador. São amplamente utilizados para documentar, estudar, planejar, melhorar e comunicar processos complexos por meio de diagramas claros e fáceis de entender. Para definirmos o seguimento do trabalho em dupla, utilizamos para definir o fluxo das pastas contendo cada itens da aplicação final.
 
+
+
+<img src="img/fluxograma.png" width="60%">
+
 ![Mapa Mental no Xmind](https://incongruous-ironclad-7f2.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd3b8f87b-29f9-4aa4-9b74-9a3d98649222%2FSocial_network-Map_1.png?table=block&id=9a980800-632b-46d6-a345-a04db1f1cd16&spaceId=a4c8eb5b-0ea6-40bd-91c7-d2ed95751a28&width=1670&userId=&cache=v2 )
 
 
