@@ -29,20 +29,19 @@ Para o desenvolvimento de produtos voltado para o usuário, utilizamos pesquisas
 
 Para os nossos usuários é importante um espaço voltado para mulheres na tecnologia.
 
-![Pesquisa do usuário um](src/img/HistoriaDeUsuario1.JPG)
+<img src="src/img/HistoriaDeUsuario1.JPG" width="40%">
 
 
 Escolhemos quatro obras de artistas mulheres para a definição de protótipo e cores.
 
 A Obra escolhida:
 
-![Quadro_Duas_Fridas](https://trello-attachments.s3.amazonaws.com/60b51bd771fc297c60145c0b/6102e082f19dbe11b854949f/418f311760c2fc9297f87a5b967fd51a/DuasFridas1.jpg)
+<img src="src/img/asDuasFridas.jpg" width="60%">
 
 
 Resultado da pesquisa:
 
-![Pesquisa do usuário um](src/img/historiaDeUsuario2.JPG)
-
+<img src="src/img/historiaDeUsuario2.JPG" width="40%">
 
 ## 3. Layout
 
@@ -52,15 +51,15 @@ Resultado da pesquisa:
 
 Tela de login:
 
-<img src="src/img/login.png" width="60%">
+<img src="src/img/tela de login.JPG" width="60%">
 
 Tela de Cadastro:
 
-<img src="src/img/cadastro.png" width="60%">
+<img src="src/img/cadastro.JPG" width="60%">
 
 Tela de feed:
 
-<img src="src/img/feed.png" width="60%">
+<img src="src/img/feed.JPG" width="60%">
 
 
 -gif aplicação final
@@ -75,5 +74,21 @@ O fluxograma descreve um processo, sistema ou algoritmo de computador. São ampl
 
 
 ## 6. Metodologias e Tecnologias
+Scrum
+kanban
+Github projects
+VSC
+Farebase
+Figma
+Node
+JavaScript
+HTML
+CSS
 
 ## 7. Autoras
+
+Cris
+[GitHub](https://github.com/crisbdev) 
+
+Mag
+[GitHub](https://github.com/Magnadutra)
