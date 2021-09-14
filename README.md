@@ -29,47 +29,44 @@ Para o desenvolvimento de produtos voltado para o usuário, utilizamos pesquisas
 
 Para os nossos usuários é importante um espaço voltado para mulheres na tecnologia.
 
-<img src="src/img/HistoriaDeUsuario1.JPG" width="40%">
+<img src="src/img/HistoriaDeUsuario1.JPG" width="50%">
 
 
 Escolhemos quatro obras de artistas mulheres para a definição de protótipo e cores.
 
 A Obra escolhida:
 
-<img src="src/img/asDuasFridas.jpg" width="60%">
+<img src="src/img/asDuasFridas.jpg" width="50%">
 
 
 Resultado da pesquisa:
 
-<img src="src/img/historiaDeUsuario2.JPG" width="40%">
+<img src="src/img/historiaDeUsuario2.JPG" width="50%">
 
 ## 3. Layout
 
-<img src="src/img/Protótipo mobile.png" width="60%">
+<img src="src/img/Protótipo mobile.png" width="50%">
 
 ## 4. Produto Final
 
 Tela de login:
 
-<img src="src/img/tela de login.JPG" width="60%">
+<img src="src/img/tela de login.JPG" width="50%">
 
 Tela de Cadastro:
 
-<img src="src/img/cadastro.JPG" width="60%">
+<img src="src/img/Cadastro.JPG" width="50%">
 
 Tela de feed:
 
-<img src="src/img/feed.JPG" width="60%">
-
-
--gif aplicação final
+<img src="src/img/feed.JPG" width="50%">
 
 ## 5. Planejamento
 
 O fluxograma descreve um processo, sistema ou algoritmo de computador. São amplamente utilizados para documentar, estudar, planejar, melhorar e comunicar processos complexos por meio de diagramas claros e fáceis de entender. Para definirmos o seguimento do trabalho em dupla, utilizamos para definir o fluxo das pastas contendo cada itens da aplicação final.
 
 
-<img src="src/img/fluxograma.png" width="60%">
+<img src="src/img/fluxograma.png" width="50%">
 
 
 
