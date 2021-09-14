@@ -45,21 +45,23 @@ Resultado da pesquisa:
 
 ## 3. Layout
 
-<img src="src/img/Protótipo mobile.png" width="50%">
+Protótipo de baixa fidelidade:
+
+<img src="src/img/Protótipo mobile.png" width="55%">
 
 ## 4. Produto Final
 
 Tela de login:
 
-<img src="src/img/tela de login.JPG" width="50%">
+<img src="src/img/tela de login.JPG" width="40%">
 
 Tela de Cadastro:
 
-<img src="src/img/Cadastro.JPG" width="50%">
+<img src="src/img/Cadastro.JPG" width="40%">
 
 Tela de feed:
 
-<img src="src/img/feed.JPG" width="50%">
+<img src="src/img/feed.JPG" width="40%">
 
 ## 5. Planejamento
 
