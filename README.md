@@ -73,8 +73,8 @@ O fluxograma descreve um processo, sistema ou algoritmo de computador. São ampl
 
 
 ## 6. Metodologias e Tecnologias
-Scrum
-kanban
+*Scrum
+- kanban
 Github projects
 VSC
 Farebase
