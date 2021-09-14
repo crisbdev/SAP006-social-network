@@ -26,15 +26,20 @@ Ellas Dev é uma rede social pensada para alunas e ex alunas da [Laboratoria Bra
 ## 2. Histórias de Usuários
 Para o desenvolvimento de produtos voltado para o usuário, utilizamos pesquisas de UX designer, com base no tema as personas são pré estabelecidas, então buscamos identificar o melhor conceito de cores e interface.
 
+
+Para os nossos usuários é importante um espaço voltado para mulheres na tecnologia.
+
 ![Pesquisa do usuário um](src/img/HistoriaDeUsuario1.JPG)
 
 
-Definição de cores:
+Escolhemos quatro obras de artistas mulheres para a definição de protótipo e cores.
 
-![Pesquisa do usuário um](src/img/historiaDeUsuario2.JPG)
-
+A Obra escolhida:
 ![Quadro_Duas_Fridas](https://trello-attachments.s3.amazonaws.com/60b51bd771fc297c60145c0b/6102e082f19dbe11b854949f/418f311760c2fc9297f87a5b967fd51a/DuasFridas1.jpg)
 
+
+Resultado da peasquisa:
+![Pesquisa do usuário um](src/img/historiaDeUsuario2.JPG)
 
 
 ## 3. Layout
