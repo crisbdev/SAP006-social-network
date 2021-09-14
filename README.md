@@ -36,7 +36,7 @@ Escolhemos quatro obras de artistas mulheres para a definição de protótipo e 
 
 A Obra escolhida:
 
-<img src="src/img/asDuasFridas.jpg" width="50%">
+<img src="src/img/asDuasFridas.jpg" width="40%">
 
 
 Resultado da pesquisa:
@@ -70,19 +70,17 @@ O fluxograma descreve um processo, sistema ou algoritmo de computador. São ampl
 
 <img src="src/img/fluxograma.png" width="50%">
 
-
-
 ## 6. Metodologias e Tecnologias
 *Scrum
-- kanban
-Github projects
-VSC
-Farebase
-Figma
-Node
-JavaScript
-HTML
-CSS
+*kanban
+*Github projects
+*VSC
+*Farebase
+*Figma
+*Node
+*JavaScript
+*HTML
+*CSS
 
 ## 7. Autoras
 
