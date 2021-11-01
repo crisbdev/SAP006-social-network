@@ -4,7 +4,7 @@ import {
 import {
   collectionPosts,
   criarPost,
-  likePost,  delPost,
+  likePost, delPost,
   updatePost,
   // eslint-disable-next-line import/named
 } from '../../services/index.js';
@@ -83,10 +83,10 @@ export default () => {
   const mensagem = feed.querySelector('#mensagem');
   const containerPost = feed.querySelector('#post-container');
   const addPost = (doc) => {
-    
-    const userId = doc.data().user_id;
-    const element = document.createElement('li');
-    const postTemplate = `
+
+  const userId = doc.data().user_id;
+  const element = document.createElement('li');
+  const postTemplate = `
 
     <div data-post="${doc.id}" class="post-publicado">
     <textarea data-textarea="${doc.id}" class="post-publicado" id="post-publicado" disabled>${doc.data().mensagem}</textarea>
@@ -174,7 +174,7 @@ export default () => {
       });
   };
   loadPosts();
-  //CRIAR POST
+  // CRIAR POST
   containerPost.addEventListener('submit', (e) => {
     e.preventDefault();
     criarPost(mensagem).then(() => {

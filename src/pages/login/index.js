@@ -10,7 +10,7 @@ export default () => {
     <figure class="logo">
       <img class="img" src="./img/ellas-dev-logo.png">
     </figure>
-    <h3 class="">Login</h3>
+    <h3>Login</h3>
     <p id="errormsg"></p>
     <section class="box-input">
       <input type="email" id="user-email" name="usuario" placeholder="Email">
@@ -19,7 +19,6 @@ export default () => {
       <input type="password" id="user-password" placeholder="Senha">
       <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
     </section>
-    <!--     <a href=''>Esqueci minha senha</a> -->
     <section class="justify-center">
       <button id="login-btn" type="password">Entrar</button>
       <p>OU</p>

@@ -28,7 +28,6 @@ const render = () => {
 
 window.addEventListener('load', render);
 window.addEventListener('hashchange', render);
-// window.addEventListener('click', render);
 
 
 
